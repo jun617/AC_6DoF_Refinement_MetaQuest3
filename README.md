@@ -3,8 +3,8 @@
 This project implements an AR system that refines the 6DoF pose of a real-world air conditioner using passthrough images from Meta Quest 3 and visualizes airflow in first-person view.
 
 ## 🎮 Demo
-
-[![Watch Full Video](./imgs/thumnail_fake.PNG)](https://youtu.be/bawtqLYrZu0)
+![thumbnail](./imgs/thumnail_fake.PNG)
+ㄴYoutube link: [Watch Full Video](https://youtu.be/bawtqLYrZu0)
 
 ---
 
@@ -18,8 +18,6 @@ A previous research project in the lab already demonstrated AR-based airflow vis
 However, this approach had a key limitation:
 
 👉 The virtual air conditioner was not accurately aligned with the real-world object.
-
----
 
 ## In this project...
 
@@ -41,8 +39,6 @@ What Already developed in previous project:
 3. **Visualize airflow** based on the pose
 
 ![SystemArchitecture](./imgs/basicexplanation.PNG)
-
----
 
 ### Major Challenges
 
@@ -78,8 +74,6 @@ This project extends the previous project by adding:
 - Connected pose updates to airflow visualization
 - Integrated device control UI within the AR environment
 
----
-
 ### Key Design Decision
 
 Instead of fully automatic pose estimation:
@@ -112,8 +106,6 @@ This repository focuses on the **HMD (Unity / Meta Quest 3) side** of the system
 - Refines pose using image sequence and initial pose
 - Returns refined pose
 
----
-
 ## 🔄 Major Pipeline
 
 1. User places an approximate initial pose of the virtual AC  
@@ -128,8 +120,6 @@ This repository focuses on the **HMD (Unity / Meta Quest 3) side** of the system
 7. Unity updates:
    - virtual AC model alignment  
    - airflow visualization  
-
----
 
 ## 📁 Project Structure
 
@@ -156,8 +146,6 @@ Scripts/
 - `Manager/`: managers for UI flow, tracking, visualization, and testing
 - `Network/`: TCP communication and packet abstraction
 - `Singleton.cs`: generic singleton base class used across managers
-
----
 
 ## 🧩 Main Components
 
@@ -212,18 +200,6 @@ Provides a reusable singleton pattern for global managers.
 
 ---
 
-## 🧪 Environment
-
-```text
-- Unity 2022.3.52f1  
-- XR Plug-in Management: Oculus  
-- Meta XR All-in-One SDK 72.0.0  
-- Meta MR Utility Kit 72.0.0  
-- Target device: Meta Quest 3  
-```
-
----
-
 ## 🔒 Public Version Notes
 
 This repository is a cleaned version of the original research project.
@@ -235,6 +211,16 @@ The following components were removed or simplified:
 - external device API integration → removed  
 - internal packet protocol details → abstracted  
 - user study framework → not included  
+
+## 🧪 Environment
+
+```text
+- Unity 2022.3.52f1  
+- XR Plug-in Management: Oculus  
+- Meta XR All-in-One SDK 72.0.0  
+- Meta MR Utility Kit 72.0.0  
+- Target device: Meta Quest 3  
+```
 
 ---
 
@@ -250,8 +236,6 @@ It does not perform fully automatic 6DoF pose estimation from scratch.
 The system relies on an external Python server for pose refinement.
 This introduces latency and limits standalone deployment on the device.
 
----
-
 ## 🚀 Future Work
 
 ### 1. Fully Automatic Pose Initialization
@@ -265,19 +249,6 @@ Utilizing scene understanding (e.g., room geometry reconstruction) by using Scen
 
 ### 4. User Study Integration
 Extending the system to include structured user studies would allow quantitative evaluation of how AR airflow visualization affects user perception and decision-making.
-
----
-
-## 🧾 Summary
-
-This project demonstrates a practical AR system that:
-
-- integrates passthrough capture and camera geometry  
-- performs client-server 6DoF pose refinement  
-- aligns virtual objects in real-world environments  
-- visualizes airflow based on refined pose  
-
-It emphasizes **real-world feasibility and system integration** rather than idealized assumptions.
 
 ---
 
