@@ -4,7 +4,7 @@ This project implements an AR system that refines the 6DoF pose of a real-world 
 
 ## 🎮 Demo
 
-![thumbnail](./imgs/thumbnail.png)
+![thumbnail](./imgs/thumbnail.PNG)
 ㄴYoutube link: [Watch Full Video](https://youtu.be/bawtqLYrZu0)
 
 ---
