@@ -278,3 +278,22 @@ This project demonstrates a practical AR system that:
 - visualizes airflow based on refined pose  
 
 It emphasizes **real-world feasibility and system integration** rather than idealized assumptions.
+
+---
+
+## 📚 Acknowledgements
+
+This project is part of a larger system that utilizes a customized version of a DeepAC-based 6DoF object tracking pipeline.
+
+- Original repository: https://github.com/WangLongZJU/DeepAC  
+- Related paper: Deep Active Contours for Real-Time 6DoF Object Pose Tracking (ICCV 2023)
+
+In the full system, this tracking module is responsible for refining the 6DoF pose of the air conditioner using image sequences.
+
+⚠️ Note:
+The tracking module itself is not included in this repository.
+This repository focuses on the Unity (Meta Quest 3) client and system integration.
+
+The original model was not trained from scratch in this project.
+Instead, the tracking pipeline was adapted and integrated into the overall AR system,
+including data handling, communication, and pose alignment in Unity.
