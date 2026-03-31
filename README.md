@@ -3,7 +3,8 @@
 This project implements an AR system that refines the 6DoF pose of a real-world air conditioner using passthrough images from Meta Quest 3 and visualizes airflow in first-person view.
 
 ## 🎮 Demo
-![thumbnail](./imgs/thumnail_fake.PNG)
+
+![thumbnail](./imgs/thumbnail.png)
 ㄴYoutube link: [Watch Full Video](https://youtu.be/bawtqLYrZu0)
 
 ---
@@ -73,6 +74,8 @@ This project extends the previous project by adding:
 - Applied refined pose to align the virtual air conditioner in Unity
 - Connected pose updates to airflow visualization
 - Integrated device control UI within the AR environment
+- 
+---
 
 ### Key Design Decision
 
@@ -105,6 +108,7 @@ This repository focuses on the **HMD (Unity / Meta Quest 3) side** of the system
 - Runs DeepAC-based 6DoF tracking module
 - Refines pose using image sequence and initial pose
 - Returns refined pose
+- repo: https://github.com/jun617/DeepAC_withC2W
 
 ## 🔄 Major Pipeline
 
@@ -264,6 +268,8 @@ In the full system, this tracking module is responsible for refining the 6DoF po
 ⚠️ Note:
 The tracking module itself is not included in this repository.
 This repository focuses on the Unity (Meta Quest 3) client and system integration.
+
+- Customized version repository: https://github.com/jun617/DeepAC_withC2W
 
 The original model was not trained from scratch in this project.
 Instead, the tracking pipeline was adapted and integrated into the overall AR system,
