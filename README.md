@@ -34,14 +34,6 @@ This project focuses on integrating 6DoF object tracking into an AR system and d
 in previous project
 ```
 ---
-
-## ⚙️ Concept
-1. Capture air conditioner image (passthrough)
-2. Estimate **6-DoF** pose (3D translation, 3D rotation)
-3. **Visualize airflow** based on the pose
-
-![SystemArchitecture](./imgs/basicexplanation.PNG)
-
 ## Major Challenges
 
 - Household air conditioners are often **featureless objects**
@@ -51,34 +43,8 @@ in previous project
   - network communication
   - system-level synchronization
 
----
 
-## My Contributions
-
-This project extends the previous project by adding:
-
-### 1. Real-time 6DoF Object Tracking Integration
-- Selected and adapted a DeepAC-based tracking approach
-- Customized the pipeline to work with featureless air conditioners
-
-### 2. Unity + Meta Quest 3 Implementation
-- Built the AR client using Unity on Meta Quest 3
-- Implemented passthrough camera capture using Quest APIs
-
-### 3. Client-Server Communication
-- Implemented TCP/IP communication between Unity and Python server
-- Sent image + metadata to the tracking module
-- Received refined 6DoF pose in real time
-- Handled multiple coordinate systems (Unity, OpenCV) and implemented transformations across camera, world, and object coordinate frames.
-
-### 4. System Integration
-- Applied refined pose to align the virtual air conditioner in Unity
-- Connected pose updates to airflow visualization
-- Integrated device control UI within the AR environment
-
----
-
-### Key Design Decision
+## Key Design Decision
 
 Instead of fully automatic pose estimation:
 
@@ -86,6 +52,18 @@ Instead of fully automatic pose estimation:
 - The system performs **continuous pose refinement using image sequences**
 
 This approach improves robustness in real-world environments with featureless objects.
+
+![DeepAC](./imgs/cameratracking.PNG)
+<sub>Deep Active Contours for Real-Time 6DoF Object Pose Tracking (ICCV 2023)</sub>
+
+---
+
+## ⚙️ Concept
+1. Capture air conditioner image (passthrough)
+2. Estimate **6-DoF** pose (3D translation, 3D rotation)
+3. **Visualize airflow** based on the pose
+
+![SystemArchitecture](./imgs/basicexplanation.PNG)
 
 ---
 
@@ -271,6 +249,31 @@ Future evaluation could include:
 
 ### 6. User Study Integration
 Extending the system to include structured user studies would allow quantitative evaluation of how AR airflow visualization affects user perception and decision-making.
+
+---
+
+## My Contributions
+
+This project extends the previous project by adding:
+
+### 1. Real-time 6DoF Object Tracking Integration
+- Selected and adapted a DeepAC-based tracking approach
+- Customized the pipeline to work with featureless air conditioners
+
+### 2. Unity + Meta Quest 3 Implementation
+- Built the AR client using Unity on Meta Quest 3
+- Implemented passthrough camera capture using Quest APIs
+
+### 3. Client-Server Communication
+- Implemented TCP/IP communication between Unity and Python server
+- Sent image + metadata to the tracking module
+- Received refined 6DoF pose in real time
+- Handled multiple coordinate systems (Unity, OpenCV) and implemented transformations across camera, world, and object coordinate frames.
+
+### 4. System Integration
+- Applied refined pose to align the virtual air conditioner in Unity
+- Connected pose updates to airflow visualization
+- Integrated device control UI within the AR environment
 
 ---
 
