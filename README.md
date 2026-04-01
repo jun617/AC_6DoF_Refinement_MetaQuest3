@@ -241,7 +241,7 @@ It does not perform fully automatic 6DoF pose estimation from scratch.
 The system relies on an external Python server for pose refinement.
 This introduces latency and limits standalone deployment on the device.
 
-## 🚀 Future Work
+## 🚀 Future Works
 
 ### 1. Fully Automatic Pose Initialization
 Future work could focus on removing the need for manual initialization by improving robustness of initial 6DoF estimation for featureless objects.
@@ -250,9 +250,26 @@ Future work could focus on removing the need for manual initialization by improv
 Optimizing the tracking model for on-device inference (e.g., running directly on Meta Quest 3) would eliminate server dependency and improve latency.
 
 ### 3. Scene-Aware Simulation
-Utilizing scene understanding (e.g., room geometry reconstruction) by using Scene API could enable airflow simulation that accounts for walls and obstacles.
+Utilizing scene understanding (e.g., room geometry reconstruction via Scene API) could enable airflow simulation that accounts for walls and obstacles.
 
-### 4. User Study Integration
+### 4. Quantitative Evaluation of Tracking Accuracy
+Future work should include systematic evaluation of the 6DoF tracking performance, such as:
+
+- pose error (translation / rotation)
+- alignment accuracy between virtual and real objects
+- robustness under varying lighting and viewpoints
+
+### 5. System Performance Benchmarking
+The current system has not been fully benchmarked.
+
+Future evaluation could include:
+
+- end-to-end latency (capture → inference → update)
+- frame rate and stability
+- network overhead and scalability
+
+
+### 6. User Study Integration
 Extending the system to include structured user studies would allow quantitative evaluation of how AR airflow visualization affects user perception and decision-making.
 
 ---
