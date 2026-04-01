@@ -54,6 +54,7 @@ Instead of fully automatic pose estimation:
 This approach improves robustness in real-world environments with featureless objects.
 
 ![DeepAC](./imgs/cameratracking.PNG)
+
 <sub>Deep Active Contours for Real-Time 6DoF Object Pose Tracking (ICCV 2023)</sub>
 
 ---
