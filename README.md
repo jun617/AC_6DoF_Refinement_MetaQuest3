@@ -30,8 +30,8 @@ This project was initiated with **two main objectives**:
 
 This project focuses on integrating 6DoF object tracking into an AR system and deploying it on Meta Quest 3.
 ```text
-What Already developed in previous project:
-👉 Airflow simulation module (developed by a separate research team)
+⚠️ Note: Airflow simulation module was already developed by a separate research team
+in previous project
 ```
 ---
 
@@ -42,7 +42,7 @@ What Already developed in previous project:
 
 ![SystemArchitecture](./imgs/basicexplanation.PNG)
 
-### Major Challenges
+## Major Challenges
 
 - Household air conditioners are often **featureless objects**
 - Reliable 6DoF estimation from a single image is difficult
@@ -53,29 +53,29 @@ What Already developed in previous project:
 
 ---
 
-### My Contributions
+## My Contributions
 
 This project extends the previous project by adding:
 
-#### 1. Real-time 6DoF Object Tracking Integration
+### 1. Real-time 6DoF Object Tracking Integration
 - Selected and adapted a DeepAC-based tracking approach
 - Customized the pipeline to work with featureless air conditioners
 
-#### 2. Unity + Meta Quest 3 Implementation
+### 2. Unity + Meta Quest 3 Implementation
 - Built the AR client using Unity on Meta Quest 3
 - Implemented passthrough camera capture using Quest APIs
 
-#### 3. Client-Server Communication
+### 3. Client-Server Communication
 - Implemented TCP/IP communication between Unity and Python server
 - Sent image + metadata to the tracking module
 - Received refined 6DoF pose in real time
 - Handled multiple coordinate systems (Unity, OpenCV) and implemented transformations across camera, world, and object coordinate frames.
 
-#### 4. System Integration
+### 4. System Integration
 - Applied refined pose to align the virtual air conditioner in Unity
 - Connected pose updates to airflow visualization
 - Integrated device control UI within the AR environment
-- 
+
 ---
 
 ### Key Design Decision
@@ -96,16 +96,16 @@ This repository focuses on the **HMD (Unity / Meta Quest 3) side** of the system
 ![SystemArchitecture](./imgs/tcpip.PNG)
 
 
-#### 🧩 Components
+### 🧩 Components
 
-##### HMD (Unity - This Repository)
+#### HMD (Unity - This Repository)
 - Captures passthrough camera frames
 - Extracts camera intrinsics and camera pose
 - Sends data to server
 - Receives refined pose
 - Updates AR object alignment and visualization
 
-##### Server (Python - Not included)
+#### Server (Python - Not included)
 - Runs DeepAC-based 6DoF tracking module
 - Refines pose using image sequence and initial pose
 - Returns refined pose
@@ -125,6 +125,30 @@ This repository focuses on the **HMD (Unity / Meta Quest 3) side** of the system
 7. Unity updates:
    - virtual AC model alignment  
    - airflow visualization  
+
+## 🔒 Public Version Notes
+
+This repository is a cleaned version of the original research project.
+
+The following components were removed or simplified:
+
+- proprietary AC model asset → replaced with placeholder object  
+- physics-based airflow simulation → replaced with simple particle system  
+- external device API integration → removed  
+- internal packet protocol details → abstracted  
+- user study framework → not included  
+
+---
+
+## 🧪 Environment
+
+```text
+- Unity 2022.3.52f1  
+- XR Plug-in Management: Oculus  
+- Meta XR All-in-One SDK 72.0.0  
+- Meta MR Utility Kit 72.0.0  
+- Target device: Meta Quest 3  
+```
 
 ## 📁 Project Structure
 
@@ -201,30 +225,6 @@ Provides UI for testing system interaction and visualization control.
 **9. Singleton.cs**
 ```text
 Provides a reusable singleton pattern for global managers.
-```
-
----
-
-## 🔒 Public Version Notes
-
-This repository is a cleaned version of the original research project.
-
-The following components were removed or simplified:
-
-- proprietary AC model asset → replaced with placeholder object  
-- physics-based airflow simulation → replaced with simple particle system  
-- external device API integration → removed  
-- internal packet protocol details → abstracted  
-- user study framework → not included  
-
-## 🧪 Environment
-
-```text
-- Unity 2022.3.52f1  
-- XR Plug-in Management: Oculus  
-- Meta XR All-in-One SDK 72.0.0  
-- Meta MR Utility Kit 72.0.0  
-- Target device: Meta Quest 3  
 ```
 
 ---
